@@ -1,32 +1,36 @@
 import pymongo
 from ImageConvert import ConvertedImages
 
-#PROPERTIES FORMAT: type (apartment, condo, house - string), address - string, images, rooms(int), bathrooms(int), price(int), LandlordName(string), StarRating (1-10 int), reviews (address, title and body -strings)
-#LANDLORD REVIEW FORMAT: address, title, body - strings
-
-#LANDLORD PAGE FORMAT: Name (string), reviews (stars, property)
-
-
 CLIENT = pymongo.MongoClient('mongodb+srv://admin:admin@cluster0.bk4dmsx.mongodb.net/?retryWrites=true&w=majority')
 DB = CLIENT["RateMyLandlord"]
 #collection = db["Properties"]
 
+    #Category = db.StringField(required=True)
+    #Address = db.StringField(required=True, unique=True)
+    #Images = db.ImageField(required=True, unique=True, size=None, thumbnail_size=None)
+    #Rooms = db.IntField(required=True)
+    #Bathrooms = db.IntField(required=True)
+    #Price = db.IntField(required=True)
+    #LandlordName = db.StringField(required=True)
+    #StarRating = db.StringField(required=True, min_value=0, max_value=10)
+    #Reviews = db.EmbeddedDocumentField(PropertyReviews)
+
 #MODERN HOUSE
-postPropertyOne = {"type": "house", "address": "Modern House Street", "images": ConvertedImages[3], "rooms": 5, "bathrooms": 3, "price": 1500, "LandlordName": "Roger Gold", "StarRating": 9, "reviews": [{"title": "Great Landlord!", "body": "Such a good first landlord, always responded on time"}, {"title": "Pretty Good", "body": "I have no complaints"}]}
+postPropertyOne = {"Category": "house", "Address": "Modern House Street", "Images": ConvertedImages[3], "Rooms": 5, "Bathrooms": 3, "Price": 1500, "LandlordName": "Roger Gold", "StarRating": 9, "Reviews": [{"Title": "Great Landlord!", "Body": "Such a good first landlord, always responded on time"}, {"Title": "Pretty Good", "Body": "I have no complaints"}]}
 
 #TIER TWO HOUSE
-postPropertyTwo = {"type": "house", "address": "19 Princess Street", "images": ConvertedImages[2], "rooms": 4, "bathrooms": 2, "price": 1000, "LandlordName": "Roger Gold", "StarRating": 7, "reviews": [{"title": "Nice Place to stay", "body": "Really close to campus"}, {"title": "Ant Infestation in Summer", "body": "House is good unless you stay in the summer"}]}
+postPropertyTwo = {"Category": "house", "Address": "19 Princess Street", "Images": ConvertedImages[2], "Rooms": 4, "Bathrooms": 2, "Price": 1000, "LandlordName": "Roger Gold", "StarRating": 7, "Reviews": [{"Title": "Nice Place to stay", "Body": "Really close to campus"}, {"Title": "Ant Infestation in Summer", "Body": "House is good unless you stay in the summer"}]}
 
 #TIER THREE HOUSE
-postPropertyThree = {"type": "house", "address": "25 Hickory Street", "images": ConvertedImages[1], "rooms": 3, "bathrooms": 1, "price": 500, "LandlordName": "John Smith", "StarRating": 8, "reviews": [{"title": "Cool House Good Price", "body": "Fun place to stay with a good Landlord"}, {"title": "The other reviews are lies", "body": "This landlord never responds, does not fix any appliances when they break"}]}
+postPropertyThree = {"Category": "house", "Address": "25 Hickory Street", "Images": ConvertedImages[1], "Rooms": 3, "Bathrooms": 1, "Price": 500, "LandlordName": "John Smith", "StarRating": 8, "Reviews": [{"Title": "Cool House Good Price", "Body": "Fun place to stay with a good Landlord"}, {"Title": "The other reviews are lies", "Body": "This landlord never responds, does not fix any appliances when they break"}]}
 
 #DIRT HOUSE
-postPropertyFour = {"type": "house", "address": "Dirt House Street", "images": ConvertedImages[0], "rooms": 1, "bathrooms": 0, "price": 50, "LandlordName": "John Smith", "StarRating": 9, "reviews": [{"title": "I got paid to stay here", "body": "I didn't even need a job this semester, great stay"}, {"title": "Not bad for the price", "body": "Interesting place to stay and I don't regret it"}]}
+postPropertyFour = {"Category": "house", "Address": "Dirt House Street", "Images": ConvertedImages[0], "Rooms": 1, "Bathrooms": 0, "Price": 50, "LandlordName": "John Smith", "StarRating": 9, "Reviews": [{"Title": "I got paid to stay here", "Body": "I didn't even need a job this semester, great stay"}, {"Title": "Not bad for the price", "Body": "Interesting place to stay and I don't regret it"}]}
 
 DB["Properties"].insert_many([postPropertyOne, postPropertyTwo, postPropertyThree, postPropertyFour])
 
-postLandlordOne = {"Name": "Roger Gold", "reviews": [{"stars": 8, "address": "Modern House Street"}, {"stars": 10, "address": "19 Princess Street"}]}
-postLandlordTwo = {"Name": "John Smith", "reviews": [{"stars": 7, "address": "25 Hickory Street"}, {"stars": 3, "address": "Mine Craft Street"}]}
+postLandlordOne = {"Name": "Roger Gold", "Reviews": [{"Stars": 8, "Address": "Modern House Street"}, {"Stars": 10, "Address": "19 Princess Street"}]}
+postLandlordTwo = {"Name": "John Smith", "Reviews": [{"Stars": 7, "Address": "25 Hickory Street"}, {"Stars": 3, "Address": "Mine Craft Street"}]}
 
 DB["Landlords"].insert_many([postLandlordOne, postLandlordTwo])
 

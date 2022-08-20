@@ -1,7 +1,7 @@
 import os, io
 from PIL import Image
 
-directory = 'images'
+directory = 'HT6-Backend/Images'
 ConvertedImages = []
  
 # iterate over files in
