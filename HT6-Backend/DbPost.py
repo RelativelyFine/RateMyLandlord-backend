@@ -23,12 +23,12 @@ postPropertyThree = {"type": "house", "address": "25 Hickory Street", "images": 
 #DIRT HOUSE
 postPropertyFour = {"type": "house", "address": "Dirt House Street", "images": ConvertedImages[0], "rooms": 1, "bathrooms": 0, "price": 50, "LandlordName": "John Smith", "StarRating": 9, "reviews": [{"title": "I got paid to stay here", "body": "I didn't even need a job this semester, great stay"}, {"title": "Not bad for the price", "body": "Interesting place to stay and I don't regret it"}]}
 
-db["Properties"].insert_many(postPropertyOne, postPropertyTwo, postPropertyThree, postPropertyFour)
+db["Properties"].insert_many([postPropertyOne, postPropertyTwo, postPropertyThree, postPropertyFour])
 
 postLandlordOne = {"Name": "Roger Gold", "reviews": [{"stars": 8, "address": "Modern House Street"}, {"stars": 10, "address": "19 Princess Street"}]}
 postLandlordTwo = {"Name": "John Smith", "reviews": [{"stars": 7, "address": "25 Hickory Street"}, {"stars": 3, "address": "Mine Craft Street"}]}
 
-db["Landlords"].insert_many(postLandlordOne, postLandlordTwo)
+db["Landlords"].insert_many([postLandlordOne, postLandlordTwo])
 
 
 
