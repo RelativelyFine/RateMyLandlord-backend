@@ -1,7 +1,7 @@
 import pymongo
 from ImageConvert import ConvertedImages
 
-#PROPERTIES FORMAT: type (apartment, condo, house - string), location (address - string), images, rooms(int), bathrooms(int), price(int), LandlordName(string), StarRating (1-10 int), reviews (address, title and body -strings)
+#PROPERTIES FORMAT: type (apartment, condo, house - string), address - string, images, rooms(int), bathrooms(int), price(int), LandlordName(string), StarRating (1-10 int), reviews (address, title and body -strings)
 #LANDLORD REVIEW FORMAT: address, title, body - strings
 
 #LANDLORD PAGE FORMAT: Name (string), reviews (stars, property)
