@@ -1,6 +1,6 @@
 from flask import Flask, request, Response
 from database.db import initialize_db
-from database.models import PropertyReviews, LandlordReviews, Properties, Landlords
+from database.models import Properties, Landlords
 from flask_cors import CORS
 
 app = Flask(__name__)
