@@ -7,7 +7,9 @@ class PropertyReviews(db.EmbeddedDocument):
 
 #LANDLORD PAGE COMMENT FORMAT Stars, Address, Title, Body
 
-class LandlordReviews(db.EmbeddedDocument):
+class Landlords(db.EmbeddedDocument):
+    meta = {"collection": "LandlordReviews"}
+    LandlordName = db.StringField(required=True)
     Stars = db.IntField(required=True, min_value=0, max_value=10)
     Address = db.StringField(required=True)
     Title = db.StringField(required=True)
@@ -25,10 +27,5 @@ class Properties(db.Document):
     LandlordName = db.StringField(required=True)
     StarRating = db.StringField(required=True, min_value=0, max_value=10)
     Reviews = db.EmbeddedDocumentField(PropertyReviews)
-
-class Landlords(db.Document):
-    meta = {"collection": "Landlords"}
-    Name = db.StringField(required=True)
-    Reviews = db.EmbeddedDocumentField(LandlordReviews)
 
 
