@@ -19,10 +19,12 @@ def get_properties():
     properties = Properties.objects().to_json()
     return Response(properties, mimetype="application/json", status=200)
 
+
 @app.route('/landlords', methods=['GET'])
 def get_landlords():
     landlords = Landlords.objects().to_json()
     return Response(landlords, mimetype="application/json", status=200)
+
 
 @app.route('/properties', methods=['POST'])
 def add_property():
@@ -31,15 +33,18 @@ def add_property():
     id = property.id
     return {'id': str(id)}, 200
 
+
 @app.route('/properties/<id>', methods=['PUT'])
 def update_property(id):
     body = request.get_json()
     Properties.objects.get(id=id).update(**body)
     return '', 200
 
+
 @app.route('/properties/<id>', methods=['DELETE'])
 def delete_movie(id):
     Properties.objects.get(id=id).delete()
     return '', 200
+
 
 app.run()
