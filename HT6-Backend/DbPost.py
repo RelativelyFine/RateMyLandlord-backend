@@ -16,16 +16,16 @@ DB = CLIENT["RateMyLandlord"]
     #Reviews = db.EmbeddedDocumentField(PropertyReviews)
 
 #MODERN HOUSE
-postPropertyOne = {"Category": "house", "Address": "Modern House Street", "Campus": "Queens", "Images": "https://imgur.com/FBIqGOI", "Rooms": 5, "Bathrooms": 3, "Price": 1500, "LandlordName": "Roger Gold", "StarRating": 9, "Reviews": [{"Title": "Great Landlord!", "Body": "Such a good first landlord, always responded on time"}, {"Title": "Pretty Good", "Body": "I have no complaints"}]}
+postPropertyOne = {"Category": "house", "Address": "Modern House Street", "Campus": "Queens", "Images": "https://imgur.com/FBIqGOI.jpeg", "Rooms": 5, "Bathrooms": 3, "Price": 1500, "LandlordName": "Roger Gold", "StarRating": 9, "Reviews": [{"Title": "Great Landlord!", "Body": "Such a good first landlord, always responded on time"}, {"Title": "Pretty Good", "Body": "I have no complaints"}]}
 
 #TIER TWO HOUSE
-postPropertyTwo = {"Category": "house", "Address": "19 Princess Street", "Campus": "Laurier", "Images": "https://imgur.com/hXTdmys", "Rooms": 4, "Bathrooms": 2, "Price": 1000, "LandlordName": "Roger Gold", "StarRating": 7, "Reviews": [{"Title": "Nice Place to stay", "Body": "Really close to campus"}, {"Title": "Ant Infestation in Summer", "Body": "House is good unless you stay in the summer"}]}
+postPropertyTwo = {"Category": "house", "Address": "19 Princess Street", "Campus": "Laurier", "Images": "https://imgur.com/hXTdmys.jpeg", "Rooms": 4, "Bathrooms": 2, "Price": 1000, "LandlordName": "Roger Gold", "StarRating": 7, "Reviews": [{"Title": "Nice Place to stay", "Body": "Really close to campus"}, {"Title": "Ant Infestation in Summer", "Body": "House is good unless you stay in the summer"}]}
 
 #TIER THREE HOUSE
-postPropertyThree = {"Category": "house", "Address": "25 Hickory Street", "Campus": "Queens", "Images": "https://imgur.com/zvh362X", "Rooms": 3, "Bathrooms": 1, "Price": 500, "LandlordName": "John Smith", "StarRating": 8, "Reviews": [{"Title": "Cool House Good Price", "Body": "Fun place to stay with a good Landlord"}, {"Title": "The other reviews are lies", "Body": "This landlord never responds, does not fix any appliances when they break"}]}
+postPropertyThree = {"Category": "house", "Address": "25 Hickory Street", "Campus": "Queens", "Images": "https://imgur.com/zvh362X.jpeg", "Rooms": 3, "Bathrooms": 1, "Price": 500, "LandlordName": "John Smith", "StarRating": 8, "Reviews": [{"Title": "Cool House Good Price", "Body": "Fun place to stay with a good Landlord"}, {"Title": "The other reviews are lies", "Body": "This landlord never responds, does not fix any appliances when they break"}]}
 
 #DIRT HOUSE
-postPropertyFour = {"Category": "house", "Address": "Dirt House Street", "Campus": "Brock", "Images": "https://imgur.com/yZwPEva", "Rooms": 1, "Bathrooms": 0, "Price": 50, "LandlordName": "John Smith", "StarRating": 9, "Reviews": [{"Title": "I got paid to stay here", "Body": "I didn't even need a job this semester, great stay"}, {"Title": "Not bad for the price", "Body": "Interesting place to stay and I don't regret it"}]}
+postPropertyFour = {"Category": "house", "Address": "Dirt House Street", "Campus": "Brock", "Images": "https://imgur.com/yZwPEva.jpeg", "Rooms": 1, "Bathrooms": 0, "Price": 50, "LandlordName": "John Smith", "StarRating": 9, "Reviews": [{"Title": "I got paid to stay here", "Body": "I didn't even need a job this semester, great stay"}, {"Title": "Not bad for the price", "Body": "Interesting place to stay and I don't regret it"}]}
 
 DB["Properties"].insert_many([postPropertyOne, postPropertyTwo, postPropertyThree, postPropertyFour])
 
